@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir(".\\lib\\build\\libs"){
-                    bat "@start \"\" cmd /c JENKINS_NODE_COOKIE=dontKillMe javaw -jar .\\lib-0.0.1-SNAPSHOT.jar"
+                    bat "@start \"\" cmd /c javaw -jar .\\lib-0.0.1-SNAPSHOT.jar"
                 }
             }
         }
@@ -23,5 +23,11 @@ pipeline {
                 sleep(time:3,unit:"SECONDS")
             }
         }
+        stage('Finalize') {
+            timeout(time: 2, unit: “HOURS”) {
+        input message: 'Approve Deploy?', ok: 'Yes'
+        }
+        }
+    
     }
 }
