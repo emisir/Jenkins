@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                sleep(time:3,unit:"SECONDS")
+               step([$class: 'TelegramBotBuilder']){
+                   telegramSend message: 'Success!'  
+               }
             }
         }
         stage('Finalize') {
