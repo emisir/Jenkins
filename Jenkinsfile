@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                telegramSend: 'Success!' 
+                telegramSend 'Success!' 
             }
         }
         stage('Finalize') {
