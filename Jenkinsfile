@@ -12,10 +12,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir(".\\lib\\build\\libs"){
-                    bat "copy .\\lib-0.0.1-SNAPSHOT.jar ~\\deployment"
-                }
-            
-                dir("~\\deployment"){
                     bat "java -jar .\\lib-0.0.1-SNAPSHOT.jar"
                 }
             }
