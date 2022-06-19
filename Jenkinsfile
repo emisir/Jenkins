@@ -24,8 +24,10 @@ pipeline {
             }
         }
         stage('Finalize') {
-            timeout(time: 2, unit: “HOURS”) {
-        input message: 'Approve Deploy?', ok: 'Yes'
+            steps {
+                timeout(time: 2, unit: “HOURS”) {
+                input message: 'Approve Deploy?', ok: 'Yes'
+            }
         }
         }
     
