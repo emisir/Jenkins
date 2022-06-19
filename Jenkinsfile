@@ -4,7 +4,7 @@ pipeline {
         stage('Build & Test') {
             steps {
                 dir("~"){
-                    bat "echo %cd&"
+                    bat "dir"
                 }
                 bat ".\\gradlew.bat build"
             }
