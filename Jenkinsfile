@@ -9,9 +9,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir(".\\lib\\build\\libs"){
+                    bat "set BUILD_ID=dontKillMe"
                     bat "@start \"\" cmd /c javaw -jar .\\lib-0.0.1-SNAPSHOT.jar"
                 }
-                sleep(time:60,unit:"SECONDS")
             }
         }
         stage('Integration Test') {
