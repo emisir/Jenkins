@@ -8,17 +8,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               waitfor SomethingThatIsNeverHappening /t 2
+                sleep(time:3,unit:"SECONDS")
             }
         }
         stage('Integration Test') {
             steps {
-               waitfor SomethingThatIsNeverHappening /t 2
+                sleep(time:3,unit:"SECONDS")
             }
         }
         stage('Notify') {
             steps {
-               waitfor SomethingThatIsNeverHappening /t 2
+                sleep(time:3,unit:"SECONDS")
             }
         }
     }
