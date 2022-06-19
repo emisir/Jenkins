@@ -19,8 +19,8 @@ pipeline {
             }
         }
         stage('Notify') {
-            steps 
-                telegramSend message: 'Success!' 
+            steps {
+                telegramSend: 'Success!' 
             }
         }
         stage('Finalize') {
