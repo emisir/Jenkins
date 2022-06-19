@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir(".\\lib\\build\\libs"){
-                    javaw -jar .\\lib-0.0.1-SNAPSHOT.jar
+                    bat "cmd /c javaw -jar .\\lib-0.0.1-SNAPSHOT.jar" 
                 }
                 sleep(time:3,unit:"SECONDS")
             }
