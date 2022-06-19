@@ -19,10 +19,8 @@ pipeline {
             }
         }
         stage('Notify') {
-            steps {
-               step([$class: 'TelegramBotBuilder']){
-                   telegramSend message: 'Success!'  
-               }
+            steps 
+                telegramSend message: 'Success!' 
             }
         }
         stage('Finalize') {
