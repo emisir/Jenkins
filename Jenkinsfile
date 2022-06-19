@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir(".\\lib\\build\\libs"){
-                    bat "set BUILD_ID=dontKillMe"
+                    bat "set JENKINS_NODE_COOKIE=dontKillMe"
                     bat "@start \"\" cmd /c javaw -jar .\\lib-0.0.1-SNAPSHOT.jar"
                 }
             }
