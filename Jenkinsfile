@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build & Test') {
             steps {
-                script {
-                  .\gradlew.bat build
-                }
+                bat ".\gradlew.bat build"
             }
         }
         stage('Deploy') {
