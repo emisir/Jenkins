@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                telegramSend 'Success!' 
+                sleep(time:3,unit:"SECONDS")
             }
         }
         stage('Finalize') {
